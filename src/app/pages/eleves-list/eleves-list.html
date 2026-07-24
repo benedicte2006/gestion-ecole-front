@@ -1,0 +1,86 @@
+<div class="entete-page">
+  <div>
+    <h1>Élèves & Inscriptions</h1>
+    <p class="fil-ariane">Accueil &gt; Élèves & Inscriptions</p>
+  </div>
+  <button class="bouton-principal">+ Nouvel élève</button>
+</div>
+
+<div class="carte">
+
+  <div class="barre-filtres">
+    <input
+      type="text"
+      placeholder="Rechercher un élève, matricule..."
+      [(ngModel)]="recherche"
+      class="champ-recherche">
+
+    <select [(ngModel)]="classeFiltre">
+      <option>Tous</option>
+      <option>6ème A</option>
+      <option>5ème B</option>
+      <option>4ème A</option>
+      <option>3ème A</option>
+    </select>
+
+    <select [(ngModel)]="niveauFiltre">
+      <option>Tous</option>
+      <option>6ème</option>
+      <option>5ème</option>
+      <option>4ème</option>
+      <option>3ème</option>
+    </select>
+
+    <select [(ngModel)]="statutFiltre">
+      <option>Tous</option>
+      <option>Inscrit</option>
+      <option>En attente</option>
+    </select>
+
+    <button class="bouton-secondaire" (click)="reinitialiserFiltres()">Réinitialiser</button>
+  </div>
+
+  <table>
+    <thead>
+    <tr>
+      <th>#</th>
+      <th>Nom & Prénoms</th>
+      <th>Matricule</th>
+      <th>Classe</th>
+      <th>Niveau</th>
+      <th>Statut d'inscription</th>
+      <th>Téléphone</th>
+      <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let eleve of elevesFiltres; let i = index">
+      <td>{{ i + 1 }}</td>
+      <td>{{ eleve.nomComplet }}</td>
+      <td>{{ eleve.matricule }}</td>
+      <td>{{ eleve.classe }}</td>
+      <td>{{ eleve.niveau }}</td>
+      <td>
+          <span
+            class="badge"
+            [ngClass]="eleve.statutInscription === 'Inscrit' ? 'badge-succes' : 'badge-attente'">
+            {{ eleve.statutInscription }}
+          </span>
+      </td>
+      <td>{{ eleve.telephone }}</td>
+      <td>
+        <span class="action-icone">👁</span>
+        <span class="action-icone">⋮</span>
+      </td>
+    </tr>
+    <tr *ngIf="elevesFiltres.length === 0">
+      <td colspan="8" class="ligne-vide">Aucun élève ne correspond à ces filtres.</td>
+    </tr>
+    </tbody>
+  </table>
+
+  <div class="pied-tableau">
+    <span>Affichage 1 à {{ elevesFiltres.length }} sur {{ listeEleves.length }} élèves</span>
+  </div>
+
+</div>

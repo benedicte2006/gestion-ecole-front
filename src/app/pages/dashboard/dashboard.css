@@ -1,0 +1,109 @@
+h1 {
+  margin-top: 0;
+}
+
+.grille-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.carte-stat {
+  background: white;
+  border-radius: 10px;
+  padding: 16px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+.icone-stat {
+  font-size: 20px;
+}
+
+.titre-stat {
+  color: var(--texte-secondaire);
+  font-size: 13px;
+  margin-top: 8px;
+}
+
+.valeur-stat {
+  font-size: 24px;
+  font-weight: 700;
+  margin-top: 4px;
+}
+
+.evolution-stat {
+  color: var(--vert-succes);
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+.grille-graphiques {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.carte {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+  margin-bottom: 16px;
+}
+
+.texte-secondaire {
+  color: var(--texte-secondaire);
+  font-size: 13px;
+}
+
+.zone-graphique-vide {
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+  background-color: var(--gris-fond);
+  border-radius: 8px;
+}
+
+.legende-repartition {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.ligne-legende {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+}
+
+.pastille {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.ligne-alerte {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: var(--orange-attente-fond);
+  border-radius: 6px;
+  margin-top: 10px;
+  font-size: 13px;
+}
+
+.ligne-alerte button {
+  background: white;
+  border: 1px solid var(--gris-bordure);
+  border-radius: 6px;
+  padding: 6px 12px;
+  cursor: pointer;
+  font-size: 12px;
+}

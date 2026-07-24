@@ -1,0 +1,38 @@
+<h1>Tableau de bord</h1>
+
+<div class="grille-stats">
+  <div class="carte-stat" *ngFor="let stat of statistiques">
+    <div class="icone-stat">{{ stat.icone }}</div>
+    <div class="titre-stat">{{ stat.titre }}</div>
+    <div class="valeur-stat">{{ stat.valeur }}</div>
+    <div class="evolution-stat">{{ stat.evolution }} vs mois dernier</div>
+  </div>
+</div>
+
+<div class="grille-graphiques">
+
+  <div class="carte">
+    <h3>Évolution des paiements (FCFA)</h3>
+    <p class="texte-secondaire">Graphique à connecter avec les vraies données de paiements.</p>
+    <div class="zone-graphique-vide">📈</div>
+  </div>
+
+  <div class="carte">
+    <h3>Répartition des élèves par niveau</h3>
+    <div class="legende-repartition">
+      <div class="ligne-legende" *ngFor="let n of repartitionNiveaux">
+        <span class="pastille" [style.backgroundColor]="n.couleur"></span>
+        {{ n.niveau }} ({{ n.pourcentage }}%)
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="carte">
+  <h3>Alertes & Notifications</h3>
+  <div class="ligne-alerte" *ngFor="let alerte of alertes">
+    <span>⚠️ {{ alerte.message }}</span>
+    <button>Voir détails</button>
+  </div>
+</div>

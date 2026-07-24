@@ -1,0 +1,66 @@
+<div class="page-connexion">
+
+  <div class="panneau-gauche">
+    <div class="logo">
+      <span class="icone-logo">🎓</span>
+      <div>
+        <strong>GESTION SCOLAIRE</strong>
+        <div>DIGITALE</div>
+      </div>
+    </div>
+
+    <h1>La digitalisation au service de l'excellence éducative au Togo.</h1>
+    <p>Gérez efficacement vos élèves, inscriptions, paiements et performances scolaires en toute simplicité.</p>
+  </div>
+
+  <div class="panneau-droit">
+    <div class="carte-connexion">
+      <h2>Bienvenue !</h2>
+      <p class="sous-titre">Connectez-vous pour accéder à votre espace.</p>
+
+      <form #connexionForm="ngForm" (ngSubmit)="seConnecter(connexionForm)">
+
+        <label>Email</label>
+        <input
+          type="email"
+          name="email"
+          [(ngModel)]="email"
+          #emailCtrl="ngModel"
+          required
+          email
+          placeholder="exemple@ecole.tg">
+        <div class="erreur" *ngIf="emailCtrl.invalid && emailCtrl.touched">
+          Veuillez saisir un email valide.
+        </div>
+
+        <label>Mot de passe</label>
+        <div class="champ-mot-de-passe">
+          <input
+            [type]="afficherMotDePasse ? 'text' : 'password'"
+            name="motDePasse"
+            [(ngModel)]="motDePasse"
+            #motDePasseCtrl="ngModel"
+            required
+            minlength="6"
+            placeholder="••••••••">
+          <span class="oeil" (click)="afficherMotDePasse = !afficherMotDePasse">👁</span>
+        </div>
+        <div class="erreur" *ngIf="motDePasseCtrl.invalid && motDePasseCtrl.touched">
+          Le mot de passe doit contenir au moins 6 caractères.
+        </div>
+
+        <div class="options">
+          <label class="souvenir">
+            <input type="checkbox" checked> Se souvenir de moi
+          </label>
+          <a href="#">Mot de passe oublié ?</a>
+        </div>
+
+        <button type="submit">Se connecter</button>
+      </form>
+    </div>
+
+    <p class="pied-de-page">© 2025 Gestion Scolaire Digitale - Tous droits réservés.</p>
+  </div>
+
+</div>
