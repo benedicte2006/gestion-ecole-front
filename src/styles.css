@@ -1,1 +1,41 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  --bleu-marine: #0d1b4c;
+  --bleu-marine-clair: #16296b;
+  --bleu-accent: #3b6fe0;
+  --gris-fond: #f4f6fb;
+  --gris-bordure: #e5e8f0;
+  --texte-principal: #1e2333;
+  --texte-secondaire: #6b7280;
+  --vert-succes: #16a34a;
+  --vert-succes-fond: #dcfce7;
+  --orange-attente: #d97706;
+  --orange-attente-fond: #fef3c7;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background-color: var(--gris-fond);
+  color: var(--texte-principal);
+}
+
+.badge {
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.badge-succes {
+  background-color: var(--vert-succes-fond);
+  color: var(--vert-succes);
+}
+
+.badge-attente {
+  background-color: var(--orange-attente-fond);
+  color: var(--orange-attente);
+}/* You can add global styles to this file, and also import other style files */
