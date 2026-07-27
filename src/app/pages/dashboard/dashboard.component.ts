@@ -2,11 +2,11 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-dashboard',
+  selector: 'app-dashboard', // ou app-dashboard, app-eleves-list, app-login
   standalone: true,
-  imports: [CommonModule],
-  templateUrl: './dashboard.component.html',
-  styleUrl: './dashboard.component.css',
+  imports: [/* ... */],
+  templateUrl: './layout.component.html', // avec .component
+  styleUrl: './layout.component.css', // avec .component
 })
 export class DashboardComponent {
   statistiques = [

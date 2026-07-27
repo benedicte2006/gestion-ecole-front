@@ -3,11 +3,11 @@ import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-layout',
+  selector: 'app-layout',        // ou app-dashboard, app-eleves-list, app-login
   standalone: true,
-  imports: [RouterOutlet, RouterLink, RouterLinkActive, CommonModule],
-  templateUrl: './layout.component.html',
-  styleUrl: './layout.component.css',
+  imports: [ /* ... */ ],
+  templateUrl: './layout.component.html',   // avec .component
+  styleUrl: './layout.component.css'        // avec .component
 })
 export class LayoutComponent {
   menuItems = [
